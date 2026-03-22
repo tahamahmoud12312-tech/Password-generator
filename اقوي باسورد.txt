@@ -1,0 +1,28 @@
+import random
+import string
+print('welcome to the passowrd genrator \n')
+taha1 = []
+taha2 = []
+taha3 = []
+medo1 = int(input("Enter the numbers you want your password to consist of: "))
+medo2 = int(input("Enter the numbers of numbers you want your password to consist of: "))
+medo3 = int(input("Enter the number of letters you want your password to consist of:"))
+medo4 = int(input("Enter the number of symbol you want your password to consist of:"))
+medo5 =  medo2 +medo3 +medo4
+num = "1234567890"
+if medo1 < medo5:
+    print("invaild input")
+else:
+    for i in range(medo2):
+        name1 = random.choice(num)
+        taha1.append(name1)
+    for n in range(medo3):
+        name = random.choice(string.ascii_letters)
+        taha2.append(name)      
+    for t in range(medo4):
+        name3 = random.choice(string.punctuation)
+        taha3.append(name3)
+    alltaha = taha1 + taha2 + taha3
+    random.shuffle(alltaha)
+    password = "".join(alltaha)
+    print(f"password genrated: {password}")
